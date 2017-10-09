@@ -1,0 +1,31 @@
+#!/bin/bash -eu
+
+set -o pipefail
+set -x
+
+BASE_DIR="$(cd "$(dirname "$0")/.."; pwd)"
+WORKSPACE_DIR="$BASE_DIR/.deploy"
+GIT_REPO="git@github.com:Kuniwak/free-drink-service"
+
+(
+	if [[ -d "$WORKSPACE_DIR" ]]; then
+		cd "$WORKSPACE_DIR"
+		git fetch
+	else
+		git clone "$GIT_REPO" "$WORKSPACE_DIR"
+		cd "$WORKSPACE_DIR"
+	fi
+
+	git checkout gh-pages
+	git reset --hard origin/master
+	git clean -fdx
+
+	npm install
+	npm prune
+	npm run build
+
+	git add -f ./lib/index.browserified.js
+	git commit -m "Refresh gh-pages"
+
+	git push -f origin gh-pages
+)

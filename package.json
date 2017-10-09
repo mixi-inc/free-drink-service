@@ -1,0 +1,25 @@
+{
+  "name": "isucon-coffee",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "npm-run-all build:ts build:bundle",
+    "build:ts": "tsc",
+    "build:bundle": "browserify -o lib/index.browserified.js -e lib/index.js",
+    "deploy": "./bin/deploy"
+  },
+  "author": "Kuniwak",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "browserify": "^14.4.0",
+    "npm-run-all": "^4.1.1",
+    "rxjs": "^5.4.3",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.43",
+    "mocha": "^4.0.1"
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>mixi Free Drink Service</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-3">mixi Free Drink Service</h1>
+        <hr>
+        <form id="form">
+            <fieldset class="form-group">
+                <legend>Menu</legend>
+                <h6><span class="badge badge-pill badge-danger">hot</span></h6>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-coffee" value="hot-coffee" checked>
+                        Coffee
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-tea" value="hot-tea">
+                        Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-green-tea" value="hot-green-tea">
+                        Green Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-oolong-tea" value="hot-oolong-tea">
+                        Oolong Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-jasmine-tea" value="hot-jasmine-tea">
+                        Jasmine Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="hot-caffeine-less-coffee" value="hot-caffeine-less-coffee">
+                        Coffee <span class="badge badge-pill badge-light">caffeine-less</span>
+                    </label>
+                </div>
+                <h6><span class="badge badge-pill badge-info">cold</span></h6>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-coffee" value="cold-coffee">
+                        Coffee
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-tea" value="cold-tea">
+                        Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-green-tea" value="cold-green-tea">
+                        Green Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-oolong-tea" value="cold-oolong-tea">
+                        Oolong Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-jasmine-tea" value="cold-jasmine-tea">
+                        Jasmine Tea
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="kind" id="cold-caffeine-less-coffee" value="cold-caffeine-less-coffee">
+                        Coffee <span class="badge badge-pill badge-light">caffeine-less</span>
+                    </label>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <label class="form-control-label" for="amount">Amount</label>
+                <input type="number" class="form-control" id="amount" value="1" min="1" max="5" required>
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="sugar" id="sugar">
+                        Sugar
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label>
+                        <input type="checkbox" name="milk" id="milk">
+                        Milk (Portion cream)
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="form-control-label" for="location-hint">Location Hint</label>
+                <input type="text" class="form-control" id="location-hint" placeholder="My shirt is red" required>
+                <small class="text-muted">English or Japanese is OK. 英語でも日本語でも構いません。</small>
+            </div>
+            <button id="submit" type="submit" class="btn btn-primary" disabled>Order</button>
+            <small class="text-muted" id="request-status-text"></small>
+        </form>
+    </div>
+    <script src="./lib/index.browserified.js"></script>
+</body>
+</html>
